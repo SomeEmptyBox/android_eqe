@@ -3,7 +3,7 @@
 function sync() {
     echo " "
     echo "===== sync rom ====="
-    repo init -u https://github.com/Evolution-X/manifest -b vic-qpr1 --git-lfs
+    repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
     /opt/crave/resync.sh
     echo "===== apply patches ====="
     rm -rf packages/services/Telephony vendor/qcom/opensource/vibrator
@@ -56,7 +56,7 @@ function build() {
     export TARGET_INCLUDE_ACCORD=false
     export DISABLE_ARTIFACT_PATH_REQUIREMENTS=true
     source build/envsetup.sh
-    lunch lineage_eqe-ap4a-user
+    lunch lineage_eqe-bp1a-user
     make installclean
     m evolution
     echo "===== completed ====="
