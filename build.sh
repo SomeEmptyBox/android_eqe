@@ -3,7 +3,7 @@
 function sync() {
     echo " "
     echo "===== sync rom ====="
-    repo init -u https://github.com/ProjectMatrixx/android.git -b 15.0 --git-lfs
+    repo init -u https://github.com/ProjectMatrixx/android.git -b 15.0-old --git-lfs
     /opt/crave/resync.sh
     echo "===== apply patches ====="
     rm -rf packages/services/Telephony vendor/qcom/opensource/vibrator
