@@ -122,7 +122,6 @@ function build() {
     lunch lineage_eqe-bp1a-user
     make installclean
     m evolution
-    curl "https://raw.githubusercontent.com/SomeEmptyBox/android_eqe/refs/heads/main/upload.sh" | bash -s out/target/product/eqe/{*.zip,boot.img,init_boot.img,vendor_boot.img,recovery.img,eqe.json}
     echo "===== completed ====="
     echo " "
 }
