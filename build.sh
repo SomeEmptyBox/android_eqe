@@ -16,9 +16,15 @@ function clone() {
     echo " "
     echo "===== clone device ====="
     rm -rf {device,vendor,kernel,hardware}/motorola vendor/evolution-priv/keys
-    git clone --depth 1 --branch lineage-22.2 https://github.com/SomeEmptyBox/android_device_motorola_eqe device/motorola/eqe
+    git clone --branch lineage-22.2 https://github.com/SomeEmptyBox/android_device_motorola_eqe device/motorola/eqe
     git clone --depth 1 --branch lineage-22.2 https://github.com/SomeEmptyBox/android_hardware_motorola hardware/motorola
     git clone --depth 1 https://github.com/SomeEmptyBox/android_vendor_evolution-priv_keys vendor/evolution-priv/keys
+    echo "===== switch ====="
+    git config user.name "peace"
+    git config user.email "peace@crave.com"
+    cd device/motorola/eqe
+    git checkout 241ce3ac00e6e94fba1c12645f4181eb6ceef3cc
+    cd -
     echo "===== clone vendor ====="
     git clone --depth 1 --branch lineage-22.2 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe vendor/motorola/eqe
     git clone --depth 1 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe-motcamera vendor/motorola/eqe-motcamera
