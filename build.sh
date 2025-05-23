@@ -19,19 +19,22 @@ function clone() {
     git clone --branch lineage-22.2 https://github.com/SomeEmptyBox/android_device_motorola_eqe device/motorola/eqe
     git clone --depth 1 --branch lineage-22.2 https://github.com/SomeEmptyBox/android_hardware_motorola hardware/motorola
     git clone --depth 1 https://github.com/SomeEmptyBox/android_vendor_evolution-priv_keys vendor/evolution-priv/keys
+    echo "===== clone vendor ====="
+    git clone --branch lineage-22.2 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe vendor/motorola/eqe
+    git clone --depth 1 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe-motcamera vendor/motorola/eqe-motcamera
+    echo "===== clone kernel ====="
+    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550 kernel/motorola/sm7550
+    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550-modules kernel/motorola/sm7550-modules
+    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550-devicetrees kernel/motorola/sm7550-devicetrees
     echo "===== switch ====="
     git config user.name "peace"
     git config user.email "peace@crave.com"
     cd device/motorola/eqe
     git checkout 241ce3ac00e6e94fba1c12645f4181eb6ceef3cc
     cd -
-    echo "===== clone vendor ====="
-    git clone --depth 1 --branch lineage-22.2 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe vendor/motorola/eqe
-    git clone --depth 1 https://gitlab.com/moto-sm7550/proprietary_vendor_motorola_eqe-motcamera vendor/motorola/eqe-motcamera
-    echo "===== clone kernel ====="
-    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550 kernel/motorola/sm7550
-    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550-modules kernel/motorola/sm7550-modules
-    git clone --depth 1 https://github.com/moto-sm7550-devs/android_kernel_motorola_sm7550-devicetrees kernel/motorola/sm7550-devicetrees
+    cd vendor/motorola/eqe
+    git checkout edd4dcc58d28f28c59147ad47ba4e8e4ad97c0f3
+    -
     echo "===== completed ====="
     echo " "
 }
