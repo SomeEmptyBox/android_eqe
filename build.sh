@@ -30,10 +30,7 @@ function clone() {
     git config user.name "peace"
     git config user.email "peace@crave.com"
     cd device/motorola/eqe
-    git checkout 241ce3ac00e6e94fba1c12645f4181eb6ceef3cc
-    cd -
-    cd vendor/motorola/eqe
-    git checkout edd4dcc58d28f28c59147ad47ba4e8e4ad97c0f3
+    git checkout 4d97b5d90488ef1b6f5de9c20dde18cb7582e8e7
     cd -
     echo "===== completed ====="
     echo " "
