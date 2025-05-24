@@ -34,7 +34,7 @@ function clone() {
     cd -
     cd vendor/motorola/eqe
     git checkout edd4dcc58d28f28c59147ad47ba4e8e4ad97c0f3
-    -
+    cd -
     echo "===== completed ====="
     echo " "
 }
