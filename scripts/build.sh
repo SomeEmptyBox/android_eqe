@@ -113,7 +113,6 @@ echo
 patches=(
     "telephony"
     "vibrator"
-    "temp"
     "quick_settings"
 )
 
