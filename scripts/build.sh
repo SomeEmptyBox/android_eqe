@@ -84,6 +84,10 @@ else
     curl -fLSs "${remote_script}" | bash || handle_error "Remote sync script download or execution failed"
 fi
 
+cd device/motorola/eqe
+./extract-files.py https://mirrors.lolinet.com/firmware/lenomola/2024/eqe/official/RETAIL/EQE_RETAIL_15_V1UMS35H.10-67-3-3_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC.xml.zip
+cd -
+
 echo
 echo "===================================="
 echo "Sync process completed successfully."
