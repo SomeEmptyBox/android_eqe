@@ -84,6 +84,10 @@ else
     curl -fLSs "${remote_script}" | bash || handle_error "Remote sync script download or execution failed"
 fi
 
+cd vendor/motorola/eqe
+git checkout a1a10a961f5b9c64f9285e64ab81f9afc79dc6b4
+cd -
+
 echo
 echo "===================================="
 echo "Sync process completed successfully."
