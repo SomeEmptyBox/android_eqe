@@ -31,7 +31,7 @@ handle_error() {
 
 cleanup() {
     echo "Cleaning up..."
-    rm -rf {device,vendor,kernel,hardware}/motorola vendor/private .repo/local_manifests
+    rm -rf {device,kernel,hardware}/motorola vendor/private .repo/local_manifests
     unset GH_TOKEN
     echo "Exiting."
 }
