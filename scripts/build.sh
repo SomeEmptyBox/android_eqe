@@ -87,6 +87,8 @@ fi
 git config --global user.name "peace"
 git config --global user.email "peace@crave.com"
 cd vendor/motorola/eqe
+pwd
+ls
 git checkout a1a10a9
 cd -
 
