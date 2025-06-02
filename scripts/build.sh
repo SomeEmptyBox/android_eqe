@@ -84,7 +84,11 @@ else
     curl -fLSs "${remote_script}" | bash || handle_error "Remote sync script download or execution failed"
 fi
 
-curl -fLSs "https://github.com/moto-sm7550-devs/android_device_motorola_eqe/commit/f1f2bf4d8722ba53ac32c4cbf63614284a205fa5.patch" | patch --strip 1 --fuzz 3 --directory device/motorola/eqe
+git config --global user.name "peace"
+git config --global user.email "peace@crave.com"
+cd vendor/motorola/eqe
+git checkout a1a10a9
+cd -
 
 echo
 echo "===================================="
