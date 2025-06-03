@@ -118,6 +118,7 @@ echo
 patches=(
     "telephony"
     "vibrator"
+    "misc_kernel"
     "quick_settings"
 )
 
@@ -139,15 +140,6 @@ for patch in "${patches[@]}"; do
     fi
     echo
 done
-
-echo "Applying miscellaneous fixes..."
-
-cd kernel/motorola/sm7550
-sed -i 's/-dirty/-peace/g' ./scripts/setlocalversion
-sed -i '2435s/timestamp/*timestamp/g' ./include/uapi/linux/videodev2.h
-cd -
-
-echo "All miscellaneous fixes applied successfully."
 
 echo
 echo "================================="
