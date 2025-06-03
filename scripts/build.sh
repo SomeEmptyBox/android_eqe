@@ -89,7 +89,10 @@ git config --global user.email "peace@crave.com"
 cd vendor/motorola/eqe
 pwd
 ls
+git fetch --unshallow
+git pull eqe-lab lineage-22.2
 git log --oneline
+git checkout a1a10a9
 cd -
 
 echo
