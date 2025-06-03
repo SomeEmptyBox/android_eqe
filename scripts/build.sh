@@ -20,7 +20,7 @@ if [ "$#" -ge 5 ]; then
 fi
 
 # my repo containing patches and scripts
-peace_eqe_repo="https://raw.githubusercontent.com/SomeEmptyBox/android_eqe/refs/heads/main"
+peace_eqe_repo="https://raw.githubusercontent.com/SomeEmptyBox/android_eqe/refs/heads/test"
 
 # Function for centralized error handling
 handle_error() {
@@ -90,7 +90,6 @@ cd vendor/motorola/eqe
 pwd
 ls
 git log --oneline
-git checkout a1a10a9
 cd -
 
 echo

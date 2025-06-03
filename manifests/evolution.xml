@@ -26,7 +26,7 @@
         remote="eqe-lab"
         name="proprietary_vendor_motorola_eqe"
         path="vendor/motorola/eqe"
-        revision="lineage-22.2"
+        revision="a1a10a961f5b9c64f9285e64ab81f9afc79dc6b4"
     />
     <project
         remote="eqe-lab"
