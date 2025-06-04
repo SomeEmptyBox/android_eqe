@@ -1,22 +1,20 @@
 #!/bin/bash
 
 # Check if at least one argument is provided
-if [ "$#" -lt 3 ]; then
-    echo "Error: At least 3 arguments are required."
+if [ "$#" -lt 1 ]; then
+    echo "Error: At least 1 arguments are required."
     exit 1
 fi
 android="${1}"
-launch_command="${2}"
-build_command="${3}"
 
 ksu_variant=""
-if [ "$#" -ge 4 ]; then
-    ksu_variant="${4}"
+if [ "$#" -ge 2 ]; then
+    ksu_variant="${2}"
 fi
 
 ksu_branch="stable"
-if [ "$#" -ge 5 ]; then
-    ksu_branch="${5}"
+if [ "$#" -ge 3 ]; then
+    ksu_branch="${3}"
 fi
 
 # my repo containing patches and scripts
@@ -31,7 +29,7 @@ handle_error() {
 
 cleanup() {
     echo "Cleaning up..."
-    rm -rf {device,kernel,hardware}/motorola vendor/private .repo/local_manifests
+    rm -rf {device,vendor,kernel,hardware}/motorola vendor/private .repo/local_manifests
     unset GH_TOKEN
     echo "Exiting."
 }
@@ -106,7 +104,7 @@ echo
 # Requires two arguments
 # 1. ksu_variant: ksu or next
 # 2. ksu_branch: stable or dev
-if [ "$#" -ge 4 ]; then
+if [ "$#" -ge 2 ]; then
     curl -fLSs ${peace_eqe_repo}/scripts/root.sh | bash -s ${ksu_variant} ${ksu_branch}
 fi
 
@@ -168,9 +166,7 @@ export DISABLE_ARTIFACT_PATH_REQUIREMENTS=true
 
 echo "Starting build process..."
 source build/envsetup.sh
-lunch ${launch_command}
-m installclean
-m ${build_command}
+brunch eqe user
 
 echo "Uploading file..."
 curl ${peace_eqe_repo}/scripts/upload.sh | bash -s out/target/product/eqe/*.zip
