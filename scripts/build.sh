@@ -64,6 +64,7 @@ case "${android}" in
         ;;
     "pixel")
         repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fifteen --git-lfs || handle_error "Repo init failed"
+        git clone https://${GH_TOKEN}@github.com/SomeEmptyBox/android_vendor_extra vendor/extra || handle_error "cloning extra failed"
         ;;
     *)
         handle_error "Invalid option: ${android}. Use lineage, evolution, or rising"
