@@ -12,7 +12,7 @@
         remote="peace"
         name="android_device_motorola_eqe"
         path="device/motorola/eqe"
-        revision="evolution"
+        revision="evolution-test"
     />
     <project
         remote="lineage"
