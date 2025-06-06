@@ -120,7 +120,7 @@ patches=(
     "telephony"
     "vibrator"
     "misc_kernel"
-    "quick_settings"
+    #"quick_settings"
 )
 
 for patch in "${patches[@]}"; do
