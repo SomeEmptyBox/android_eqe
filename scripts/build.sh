@@ -169,9 +169,8 @@ echo "Starting build process..."
 source build/envsetup.sh
 brunch eqe user
 
-ls ${OUT}
 echo "Uploading file..."
-curl ${peace_eqe_repo}/scripts/upload.sh | bash -s out/target/product/eqe/*.zip
+curl ${peace_eqe_repo}/scripts/upload.sh | bash -s ${OUT}/{*.zip,recovery.img,vendor_boot.img}
 
 echo
 echo "============================="
