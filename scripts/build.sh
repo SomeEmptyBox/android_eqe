@@ -168,7 +168,8 @@ export DISABLE_ARTIFACT_PATH_REQUIREMENTS=true
 
 echo "Starting build process..."
 source build/envsetup.sh
-brunch ${device} user
+lunch infinity_eqe-user
+mka bacon
 
 echo "Uploading file..."
 curl ${build_utils}/scripts/upload.sh | bash -s ${OUT}/{*.zip,recovery.img,vendor_boot.img}
