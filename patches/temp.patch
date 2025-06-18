@@ -24,4 +24,17 @@ index 61d92be..a55053a 100644
 -ro.vendor.camera.res.fmq.size   u:object_r:vendor_camera_prop:s0
  vendor.camera.led.torchmode     u:object_r:vendor_camera_prop:s0
  
- # Radio
+ # Radiodiff --git a/device/motorola/eqe/lineage_eqe.mk b/device/motorola/eqe/lineage_eqe.mk
+index 0dcdfa0..217d90f 100644
+--- a/device/motorola/eqe/lineage_eqe.mk
++++ b/device/motorola/eqe/lineage_eqe.mk
+@@ -21,9 +21,6 @@ TARGET_ENABLE_BLUR := true
+ # Inherit some common Lineage stuff.
+ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+ 
+-# Include signing keys
+-include vendor/private/keys/keys.mk
+-
+ PRODUCT_NAME := lineage_eqe
+ PRODUCT_DEVICE := eqe
+ PRODUCT_MANUFACTURER := motorola
